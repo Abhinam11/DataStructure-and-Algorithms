@@ -1,0 +1,138 @@
+1st
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    try{
+    int a,b;
+    cout<<"Enter the two number you want to divide: ";
+    cin>>a>>b;
+        if(b==0){
+            throw 0;
+        }
+        cout<<"Division of a/b is: "<<a/b;
+        
+    }
+    catch (int x){
+        cout<<"Exception found, Division Not possible.";
+    }
+    
+    return 0;
+}
+
+2nd
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    while(1){
+        try{
+        float a,b;
+        cout<<"Enter two numbers you want to divide: ";
+        cin>>a>>b;
+        if(b==0){
+            throw "Found";
+        }
+        cout<<"Divion possible , a/b is: "<<a/b<<endl;
+        }
+        catch(char const* a){
+            cout<<"Exception found, Code terminated!!";
+            break;
+        }
+        
+        
+    }
+    return 0;
+}
+
+3rd
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    while(1){
+        try{
+        float a,b;
+        cout<<"Enter any value of a b/w 1-50: ";
+        cin>>a;
+        cout<<"Enter any value of b b/w 1-10: ";
+        cin>>b;
+        if(a<1 || a>50 || b<1 || b>10)
+        throw 'a';
+        if(b==0)
+        throw 0;
+        cout<<"value of a/b is: "<<a/b<<endl;
+        }
+        catch(char a){
+            cout<<"This catch is taking character !!\n";
+            cout<<"This is a out of range error\n";
+        }
+        catch(int a){
+            cout<<"This catch is taking integer  !!\n";
+            cout<<"This division is not possible\n";
+        }
+        cout<<"If you want to exit press 0 else 1: ";
+        int k;
+        cin>>k;
+        if(k==0)
+        break;
+    }
+    return 0;
+}
+
+4th
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+     try{
+         throw 0;
+     }
+     catch(int a){
+         cout<<"This is the first throw\n";
+         try{
+         throw 'a';
+         }
+         catch(char a){
+             cout<<"This is rethrow using char\n";
+             try{
+                 throw "abhay";
+             }
+             catch(const char*){
+                 cout<<"This is re-rethrow using string";
+             }
+         }
+     }
+    
+    return 0;
+}
+
+5
+#include<bits/stdc++.h>
+using namespace std;
+int row,col;
+void check_error(int row,int col, int a[][]){
+    int r=row,c=col;
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+           try{
+               if(a[i][j]<5 || a[i][j]>50)
+               throw 0;
+           }
+           catch(int a){
+               cout<<"Invalid data found!! index "<<r<<" "<<c<<endl;
+           }
+        }
+    }
+}
+int main(){
+    
+    cout<<"Enter the row and column of matrix: ";
+    cin>>row>>col;
+    int a[row][col];
+    cout<<"Enter the values of matrix, data should be in the range of 5-50";
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            cin>>a[i][j];
+        }
+    }
+    check_error(row,col,a);
+    return 0;
+}
