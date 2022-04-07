@@ -1,0 +1,112 @@
+1st solution
+#include<bits/stdc++.h>
+using namespace std;
+class emp{
+    public:
+    int  year_of_joining, salary;
+    string address,name;
+    void info(){
+        string n,m;
+        cout<<"Enter the name of the emp:\t ";
+        cin>>n;
+        name=n;
+        cout<<endl;
+        
+        int a,b,c;
+        cout<<"Enter the salary:\t";
+        cin>>a;
+        salary=a;
+        cout<<endl;
+        
+        cout<<"Enter the year of joining: \t";
+        cin>>b;
+        year_of_joining=b;
+        cout<<endl;
+        
+        cout<<"Enter the address:\t";
+        cin>>m;
+        address=m;
+        cout<<endl;
+    }
+};
+
+
+int main(){
+    emp a[3];
+    a[0].info();
+    a[1].info();
+    a[2].info();
+    cout<<"Name\t salary\t year_of_joining\t address\n";
+    for(int i=0;i<3;i++){
+        cout<<a[i].name<<"\t"<<a[i].salary<<"\t"<<a[i].year_of_joining<<"\t\t\t"<<a[i].address<<endl;
+    }
+    return 0;
+}
+
+
+
+
+2nd solution
+#include<bits/stdc++.h>
+using namespace std;
+
+class AddAmount{
+    public:
+    int amount=50;
+    AddAmount(){
+        cout<<"This is the constructor witour any parameter\n";
+    }
+    AddAmount(int money){
+        amount+=money;
+        cout<<"The total amount in this account is: "<<amount;
+    }
+    
+};
+
+int main(){
+    AddAmount a;
+     AddAmount b(26);
+    
+    return 0;
+}
+
+
+
+3rd solution
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Bank{
+    public:
+    int amount=0;
+  void getBalance(){
+      cout<<"Enter the amount u want to submit:";
+      int amnt;
+      cin>>amnt;
+      amount+=amnt;
+      cout<<"The total amount in this bank is: "<<amount<<endl<<endl;
+  }  
+};
+class BankA: public Bank{
+    
+};
+class BankB: public Bank{
+    
+};
+class BankC: public Bank{
+    
+};
+int main(){
+    cout<<"***********You are running BankA***********\n";
+    BankA a1;
+    a1.getBalance();
+    cout<<"***********You are running BankB***********\n";
+    BankB a2;
+    a2.getBalance();
+    cout<<"***********You are running BankC***********\n";
+    BankC a3;
+    a3.getBalance();
+    
+    return 0;
+}
