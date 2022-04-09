@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+class student{
+    private:
+    int a,b;
+    public:
+    student(int x, int y){
+        a=x; b=y;
+        cout<<"a is :"<<a<<" "<<"b is :"<<b<<endl;
+    }
+    student(int j){
+        a=j;
+        cout<<"here only one agrument passed which is :"<<a<<endl;
+    }
+    student(){
+        cout<<"i am a student\n";
+    }
+};
+
+int main()
+{
+     student s3(8);
+     
+    return 0;
+}
