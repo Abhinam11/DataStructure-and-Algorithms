@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+class complex{
+    private:
+    int a,b;
+    public:
+    void set_data(int x,int y){
+        a=x; b=y; 
+    }
+    void display_data(){
+        cout<<"a is :"<<a<<" "<<"b is :"<<b<<endl;
+    }
+    friend complex operator - (complex );
+};
+complex operator - (complex X){
+    complex temp;
+    temp.a=-X.a;
+    temp.b=-X.b;
+    return temp;
+}
+int main(){
+    complex o1,o2;
+
+    o1.set_data(2,3);
+    o2=-o1;
+    
+    o2.display_data();
+    return 0;
+}
